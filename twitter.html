@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/twitter.css">
+	<title>Twitter</title>
+</head>
+<body>
+	<header>
+		<div class="name">
+			<p>TWITTER</p>
+		</div>
+	</header>
+	<section class="content">
+		<div class="about">
+			<div class="texto-about">
+				<div class="texto1">
+					<h3>Reto de código</h3>
+					<p>Hola, <br>soy front end developer jr.</p>
+					<hr>
+					<a href="#">CÓDIGO</a>
+				</div>
+				<div class="texto2">
+					<textarea name="txt" id="tweet" placeholder="¿Qué estás pensando?" oninput="charactLimit()"></textarea>
+					<button type="button" id="btn" onclick="add()">TWEET</button>
+					<p id="inp">140</p>
+				</div>
+			</div>
+		</div>
+		<div id="contenedor"></div>
+	</section>
+
+	<script type="text/javascript" src="Assets/JS/twitter.js"></script>
+</body>
+</html>
