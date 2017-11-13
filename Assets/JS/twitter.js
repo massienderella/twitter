@@ -19,13 +19,11 @@ function add(){
 	btn.disabled = true;
 }
 
-
 //Función para limtar el número de caracteres
 function charactLimit(){
 	var tweet = document.getElementById("tweet").value; //Variable donde se almacena valor de cada tweet
-	var contador = document.getElementById("inp");//Variable para definir el contador
-	var boton = document.getElementById("btn"); //Variable para definir el botón
 	var contadorMax = 140; //Variable para definir la cantidad máxima de caracteres
+	var contador = document.getElementById("inp");
 	contador.innerHTML = contadorMax - tweet.length; //Modificar el contador para que a 140 se le reste el largo del tweet
 	
 	//Para habilitar/deshabilitar el botón dependiendo de la cantidad de caracteres
@@ -33,16 +31,45 @@ function charactLimit(){
 		btn.disabled = true; // El botón se deshabilitará
 	}else if(tweet.length < contadorMax){ //Si el largo del tweet es menor que 140
 		btn.disabled = false; // El botón no se deshabilitará
+	}if(contadorMax - tweet.length <= 10){
+	contador.style.color = "red";
+	}else if(contadorMax - tweet.length <= 20 && contadorMax - tweet.length > 10){
+		contador.style.color = "orange";
+	}else{
+	contador.style.color = "black";
 	}
-
+	
+var textarea = document.getElementById("tweet");
+	textarea.style.height = "";
+	var heightLimit = 200;
+ 	textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
+	
 }
 
+//Función para hacer crecer el textarea cuando se presiona enter
+/*tweet.oninput = function() {
+	var textarea = document.getElementById("tweet");
+	var limit = 200;
+
+	textarea.style.height = "";
+	textarea.style.height = Math.min(textarea.scrollHeight, 300) + "px";
+}*/
+
+/*function colorTweet(){
+	var tweet = document.getElementById("tweet").value; //Variable donde se almacena valor de cada tweet
+	var contador = document.getElementById("inp");//Variable para definir el contador
+	var boton = document.getElementById("btn"); //Variable para definir el botón
+	var contadorMax = 140; //Variable para definir la cantidad máxima de caracteres
+	contador.innerHTML = contadorMax - tweet.length;
+		contador.innerHTML.style.color = "pink";
+}*/
+
 //Función para cambiar el color del contador dependiendo de la cantidad de caracteres restantes
-function charColor(){
+/*function charColor(){
 	var tweet = document.getElementById("tweet").value; //Variable donde se almacena valor de cada tweet
 	var contador = document.getElementById("inp");//Variable para definir el contador
 	var char = tweet.value.length;
-	contador.innerText = 140 - caracteres;
+	contador.innerText = 140 - char;
 
 		if (char >= 120 && char < 130){
 			contador.style.color = "pink";
@@ -51,17 +78,32 @@ function charColor(){
 		}else {
 			contador.style.color = "red";
 		}
-	}
+	}*/
 
 //Función para hacer crecer el textarea cuando se presiona enter
-textarea.oninput = function(){
+/*textarea.oninput = function(){
 	var textarea = document.getElementById("tweet");
 	var heightLimit = 200;
 
 	textarea.style.height = "";
  	textarea.style.height = Math.min(textarea.scrollHeight, heightLimit) + "px";
 
- 	}
+ 	}*/
+
+ 	/*function colorTweet(){
+	var tweet = document.getElementById("tweet").value; //Variable donde se almacena valor de cada tweet
+	var contador = document.getElementById("inp");//Variable para definir el contador
+	var boton = document.getElementById("btn"); //Variable para definir el botón
+	var contadorMax = 140; //Variable para definir la cantidad máxima de caracteres
+	contador.innerHTML = contadorMax - tweet.length;
+	if(contador.length >= 120 && <130){
+		contador.style.color = "pink";
+	}else if(tweet.length >130){
+		contador.style.color = "blue";
+	}else{
+		contador.style.color = "red";
+	}
+}*/
 
 //↓ intentos fallidos ↓
 
